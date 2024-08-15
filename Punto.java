@@ -96,20 +96,38 @@ public class Punto implements IPunto {
     }
 
 
-    // implementar los metodos abstractos que permitan obtener la
+    // implementar los metodos abstractos que permitan obtener la:
     // 1. la distancia entre dos puntos
     // 2. el punto medio entre dos puntos
     // para presentar mediante git la proxima clase 12/08/2024
 
     @Override
-    public double dameDistanciaEntreOtroPunto(Punto OtroOPunto) {
+    public double dameDistanciaEntreOtroPunto(Punto OtroPunto) {
+        double distancia = 0;
+        double x1=this.x;
+        double y1=this.y;
+        double x2=this.OtroPunto.getX();
+        double y2=this.OtroPunto.getY();
 
-        return 0;
+        if(this.sistema==Sistema.PLANO){
+            distancia=Math.sqrt(Math.pow((x2-x1),b:2) + Math.pow((y2-y1),b:2)):
+        }
+        else if(this.sistema==Sistema.ESPACIO){
+
+        }       
+        else{
+            System.out.println(x:"debe proporcionar un sistema, no se puede realizar la operacion9 ")
+        }
+        return distancia;
     }
 
     @Override
-    public Punto damePuntoMedioEntreOtroPunto(Punto OtroPunto) {
+    public Punto damePuntoMedioEntreOtroPunto(Punto OtroPunto) { 
 
-        return null;
+        double xMedio = (this.x + OtroPunto.x)/2;
+        double yMedio = (this.y + OtroPunto.y)/2;
+        Punto medioPunto = new Punto(xMedio, yMedio);
+
+        return medioPunto;
     }
 }
